@@ -6,9 +6,10 @@ import tseslint from 'typescript-eslint'
 import prettierConfig from 'eslint-config-prettier'
 import prettierPlugin from 'eslint-plugin-prettier'
 import reactPlugin from 'eslint-plugin-react'
+import checkFile from 'eslint-plugin-check-file'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'coverage'] },
   {
     extends: [
       js.configs.recommended,
@@ -24,6 +25,7 @@ export default tseslint.config(
       react: reactPlugin,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'check-file': checkFile,
       prettier: prettierPlugin,
     },
     rules: {
@@ -42,6 +44,24 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'check-file/filename-naming-convention': [
+        'error',
+        {
+          '**/*.{ts,tsx}': 'KEBAB_CASE',
+        },
+      ],
+      'check-file/folder-naming-convention': [
+        'error',
+        {
+          'src/**/': 'KEBAB_CASE',
+        },
+      ],
+    },
+  },
+  {
+    files: ['**/*.test.{ts,tsx}', '*.config.ts', '**/*.d.ts'],
+    rules: {
+      'check-file/filename-naming-convention': 'off',
     },
   },
 )
