@@ -13,6 +13,9 @@ dist-ssr
 *.local
 coverage
 
+# Caches
+*.tsbuildinfo
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

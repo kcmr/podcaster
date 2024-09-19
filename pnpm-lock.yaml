@@ -20,6 +20,9 @@ importers:
       react-router-dom:
         specifier: ^6.26.2
         version: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      tailwind-merge:
+        specifier: ^2.5.2
+        version: 2.5.2
       zustand:
         specifier: 5.0.0-rc.2
         version: 5.0.0-rc.2(@types/react@18.3.7)(react@18.3.1)
@@ -2104,6 +2107,9 @@ packages:
   synckit@0.9.1:
     resolution: {integrity: sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A==}
     engines: {node: ^14.18.0 || >=16.0.0}
+
+  tailwind-merge@2.5.2:
+    resolution: {integrity: sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==}
 
   tailwindcss@3.4.12:
     resolution: {integrity: sha512-Htf/gHj2+soPb9UayUNci/Ja3d8pTmu9ONTfh4QY8r3MATTZOzmv6UYWF7ZwikEIC8okpfqmGqrmDehua8mF8w==}
@@ -4538,6 +4544,8 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.1.1
       tslib: 2.7.0
+
+  tailwind-merge@2.5.2: {}
 
   tailwindcss@3.4.12:
     dependencies:
