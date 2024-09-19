@@ -10,13 +10,11 @@ export const loader = async (): Promise<Podcast[]> => {
 
   if (isOlderThanOneDay(lastFetched)) {
     const apiData = await fetchTopPodcasts()
-    const transformedPodcasts = apiData.feed.entry.map(
-      transformApiPodcastToPodcast,
-    )
-    setPodcasts(transformedPodcasts)
+    const podcasts = apiData.feed.entry.map(transformApiPodcastToPodcast)
+    setPodcasts(podcasts)
     setLastFetched(Date.now())
 
-    return transformedPodcasts
+    return podcasts
   }
 
   return podcasts
