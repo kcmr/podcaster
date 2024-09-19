@@ -19,7 +19,7 @@ export default function PodcastList({ podcasts }: PodcastListProps) {
               className="rounded-full border-4 border-white shadow-md"
             />
           </div>
-          <h3 className="text-lg font-semibold">{podcast.title}</h3>
+          <h2 className="text-lg font-semibold">{podcast.title}</h2>
           <p className="text-sm text-gray-600">{podcast.author}</p>
         </Card>
       ))}
