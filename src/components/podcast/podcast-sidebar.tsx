@@ -9,7 +9,6 @@ interface PodcastSidebarProps extends ComponentProps<'div'> {
 
 export function PodcastSidebar({ podcast, className }: PodcastSidebarProps) {
   const { title, author, imageSrc, description } = podcast
-  const cropDescription = description.length > 200
 
   return (
     <Card className={cn('flex flex-col gap-4', className)}>
@@ -26,13 +25,7 @@ export function PodcastSidebar({ podcast, className }: PodcastSidebarProps) {
       </div>
       <div className="border-t pt-3.5">
         <h3 className="font-bold text-sm mb-2">Description:</h3>
-        <p
-          className={cn('text-sm text-gray-600 italic', {
-            'line-clamp-6': cropDescription,
-          })}
-        >
-          {description}
-        </p>
+        <p className="text-sm text-gray-600 italic">{description}</p>
       </div>
     </Card>
   )
