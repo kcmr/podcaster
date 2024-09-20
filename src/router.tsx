@@ -14,12 +14,14 @@ import {
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<Error />}>
-      <Route index element={<Home />} loader={homeLoader} />
-      <Route
-        path="podcast/:podcastId"
-        element={<PodcastDetail />}
-        loader={podcastDetailLoader}
-      />
+      <Route errorElement={<Error />}>
+        <Route index element={<Home />} loader={homeLoader} />
+        <Route
+          path="podcast/:podcastId"
+          element={<PodcastDetail />}
+          loader={podcastDetailLoader}
+        />
+      </Route>
     </Route>,
   ),
 )
