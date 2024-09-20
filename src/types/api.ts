@@ -30,3 +30,24 @@ export interface ApiPodcastFeed {
     entry: ApiPodcast[]
   }
 }
+
+export interface ApiPodcastLookup {
+  resultCount: number
+  results: [ApiTrack, ...ApiPodcastEpisode[]]
+}
+
+export interface ApiTrack {
+  wrapperType: 'track'
+}
+
+export interface ApiPodcastEpisode {
+  wrapperType: 'podcastEpisode'
+  collectionName: string
+  episodeGuid: string
+  description: string
+  trackTimeMillis: number
+  trackId: number
+  trackName: string
+  releaseDate: string
+  episodeUrl: string
+}

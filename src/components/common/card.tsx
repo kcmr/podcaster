@@ -15,8 +15,6 @@ export default function Card({
     <div
       {...rest}
       className={cn(
-        'flex flex-col items-center',
-        'text-center',
         'p-4',
         'bg-white',
         'rounded-lg',

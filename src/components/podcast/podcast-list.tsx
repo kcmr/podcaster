@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Podcast } from '../../types'
 import Card from '../common/card'
 
@@ -8,19 +9,30 @@ interface PodcastListProps {
 export default function PodcastList({ podcasts }: PodcastListProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-16 gap-x-4">
-      {podcasts.map((podcast) => (
-        <Card key={podcast.id} hoverAnimation>
+      {podcasts.map(({ id, imageSrc, title, author }) => (
+        <Card
+          key={id}
+          hoverAnimation
+          className="relative flex flex-col items-center text-center"
+        >
           <div className="-mt-16 mb-4">
             <img
-              src={podcast.imageSrc}
-              alt={`${podcast.title} cover`}
+              src={imageSrc}
+              alt={`${title} cover`}
               width={120}
               height={120}
               className="rounded-full border-4 border-white shadow-md"
             />
           </div>
-          <h2 className="text-lg font-semibold">{podcast.title}</h2>
-          <p className="text-sm text-gray-600">{podcast.author}</p>
+          <h2 className="text-lg font-semibold">
+            <Link
+              to={`podcast/${id}`}
+              className="after:absolute after:inset-0 after:content-['']"
+            >
+              {title}
+            </Link>
+          </h2>
+          <p className="text-sm text-gray-600">{author}</p>
         </Card>
       ))}
     </div>
