@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 import Header from '../components/common/header'
 
 export default function Root() {
@@ -6,6 +6,7 @@ export default function Root() {
     <main className="container mx-auto mb-12 px-4 max-w-6xl">
       <Header />
       <Outlet />
+      <ScrollRestoration />
     </main>
   )
 }
