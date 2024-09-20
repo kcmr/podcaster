@@ -3,7 +3,7 @@ import {
   isOlderThanOneDay,
   ONE_DAY_MS,
   ONE_HOUR_IN_SECONDS,
-} from './date-utils'
+} from './date'
 
 describe('isOlderThanOneDay', () => {
   beforeEach(() => {

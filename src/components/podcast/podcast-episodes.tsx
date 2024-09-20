@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PodcastEpisode } from '../../types'
-import { formatDuration } from '../../utils/date-utils'
+import { formatDuration } from '../../utils/date'
 import { cn } from '../../utils/style'
 import Card from '../common/card'
 
