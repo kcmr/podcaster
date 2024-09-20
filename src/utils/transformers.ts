@@ -21,7 +21,7 @@ export function transformApiPodcastLookupToPodcastEpisodes(
       id: episode.trackId.toString(),
       title: episode.trackName,
       description: episode.description,
-      durationMs: episode.trackTimeMillis,
+      durationMs: episode.trackTimeMillis ?? null,
       releaseDate: episode.releaseDate,
       audioUrl: episode.episodeUrl,
     })),

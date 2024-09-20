@@ -14,7 +14,7 @@ export interface PodcastEpisode {
   id: string
   title: string
   description: string
-  durationMs: number
+  durationMs: number | null
   releaseDate: string
   audioUrl: string
 }

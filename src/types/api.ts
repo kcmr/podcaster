@@ -45,7 +45,7 @@ export interface ApiPodcastEpisode {
   collectionName: string
   episodeGuid: string
   description: string
-  trackTimeMillis: number
+  trackTimeMillis?: number
   trackId: number
   trackName: string
   releaseDate: string
