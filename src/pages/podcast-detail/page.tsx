@@ -10,10 +10,6 @@ export default function PodcastDetail() {
     state.getPodcastDetail(podcastId!),
   )
 
-  if (!podcastDetail) {
-    return <div>Loading...</div>
-  }
-
   return (
     <div className="flex gap-8">
       <PodcastSidebar

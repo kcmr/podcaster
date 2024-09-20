@@ -27,7 +27,7 @@ export const usePodcastStore = create(
 interface PodcastDetailStore {
   podcastDetails: Record<string, PodcastDetail>
   setPodcastDetail: (id: string, detail: PodcastDetail) => void
-  getPodcastDetail: (id: string) => PodcastDetail | null
+  getPodcastDetail: (id: string) => PodcastDetail
   lastFetched: Record<string, number>
   setLastFetched: (id: string, timestamp: number) => void
   shouldFetchPodcastDetail: (id: string) => boolean
@@ -44,7 +44,7 @@ export const usePodcastDetailStore = create(
             [id]: detail,
           },
         })),
-      getPodcastDetail: (id) => get().podcastDetails[id] || null,
+      getPodcastDetail: (id) => get().podcastDetails[id],
       lastFetched: {},
       setLastFetched: (id, timestamp) =>
         set((state) => ({
@@ -54,7 +54,7 @@ export const usePodcastDetailStore = create(
           },
         })),
       shouldFetchPodcastDetail: (id) =>
-        isOlderThanOneDay(get().lastFetched[id]),
+        isOlderThanOneDay(get().lastFetched[id] ?? 0),
     }),
     {
       name: 'podcast-detail-storage',

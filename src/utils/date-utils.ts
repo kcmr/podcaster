@@ -3,9 +3,8 @@ export const ONE_HOUR_IN_SECONDS = 3600
 export const ONE_MINUTE_IN_SECONDS = 60
 export const ONE_SECOND_IN_MS = 1000
 
-export const isOlderThanOneDay = (lastTimestamp: number | null): boolean => {
-  if (!lastTimestamp) return true
-  return Date.now() - lastTimestamp > ONE_DAY_MS
+export const isOlderThanOneDay = (timestamp: number): boolean => {
+  return Date.now() - timestamp > ONE_DAY_MS
 }
 
 export const formatDuration = (milliseconds: number): string => {

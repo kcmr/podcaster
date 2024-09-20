@@ -8,7 +8,7 @@ export const loader = async (): Promise<Podcast[]> => {
   const { podcasts, lastFetched, setPodcasts, setLastFetched } =
     usePodcastStore.getState()
 
-  if (isOlderThanOneDay(lastFetched)) {
+  if (isOlderThanOneDay(lastFetched ?? 0)) {
     const apiData = await fetchTopPodcasts()
     const podcasts = apiData.feed.entry.map(transformApiPodcastToPodcast)
     setPodcasts(podcasts)
