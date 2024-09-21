@@ -3,13 +3,14 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import Root from './layouts/root'
-import Error from './pages/error'
 import { Home, loader as homeLoader } from './pages/home'
 import {
+  Podcast,
   PodcastDetail,
-  loader as podcastDetailLoader,
-} from './pages/podcast-detail'
+  podcastDetailLoader,
+  PodcastEpisode,
+} from './pages/podcast'
+import { Root, Error } from './pages'
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,9 +19,16 @@ export const router = createBrowserRouter(
         <Route index element={<Home />} loader={homeLoader} />
         <Route
           path="podcast/:podcastId"
-          element={<PodcastDetail />}
+          element={<Podcast />}
           loader={podcastDetailLoader}
-        />
+        >
+          <Route
+            index
+            element={<PodcastDetail />}
+            loader={podcastDetailLoader}
+          />
+          <Route path="episode/:episodeId" element={<PodcastEpisode />} />
+        </Route>
       </Route>
     </Route>,
   ),
