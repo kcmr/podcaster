@@ -1,16 +1,16 @@
 import { render, screen, fireEvent } from '@test-support/react'
-import Search from './search'
+import SearchInput from './search-input'
 
-describe('Search', () => {
+describe('SearchInput', () => {
   it('renders a search input', () => {
-    render(<Search />)
+    render(<SearchInput />)
 
     expect(screen.getByRole('searchbox')).toHaveAttribute('type', 'search')
   })
 
   it('calls onChange when the input value changes', () => {
     const onChange = vi.fn()
-    render(<Search onChange={onChange} />)
+    render(<SearchInput onChange={onChange} />)
 
     const input = screen.getByRole('searchbox')
     fireEvent.change(input, { target: { value: 'test' } })
@@ -19,7 +19,7 @@ describe('Search', () => {
   })
 
   it('uses a default placeholder "Filter…" when no placeholder is provided', () => {
-    render(<Search />)
+    render(<SearchInput />)
 
     expect(screen.getByRole('searchbox')).toHaveAttribute(
       'placeholder',
@@ -28,7 +28,7 @@ describe('Search', () => {
   })
 
   it('uses a provided placeholder when provided', () => {
-    render(<Search placeholder="Search…" />)
+    render(<SearchInput placeholder="Search…" />)
 
     expect(screen.getByRole('searchbox')).toHaveAttribute(
       'placeholder',
@@ -37,7 +37,7 @@ describe('Search', () => {
   })
 
   it('appends the provided className to the input', () => {
-    render(<Search className="test-class" />)
+    render(<SearchInput className="test-class" />)
 
     expect(screen.getByRole('searchbox')).toHaveClass('test-class')
   })

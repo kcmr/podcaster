@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router-dom'
-import { PodcastList, Search } from '@/components'
+import { PodcastList, SearchInput } from '@/components'
 import type { Podcast } from '@/types'
 import { useSearchStore } from '@/store'
 
@@ -20,12 +20,14 @@ export default function Home() {
 
   return (
     <div>
-      <Search
-        value={searchTerm}
-        placeholder="Filter podcasts…"
-        onChange={handleSearchChange}
-        className="mt-2 mb-4"
-      />
+      <search>
+        <SearchInput
+          value={searchTerm}
+          placeholder="Filter podcasts…"
+          onChange={handleSearchChange}
+          className="mt-2 mb-4"
+        />
+      </search>
       <div className="py-16">
         <PodcastList podcasts={filteredPodcasts} />
       </div>

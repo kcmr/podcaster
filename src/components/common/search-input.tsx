@@ -5,7 +5,11 @@ interface SearchProps extends Omit<ComponentProps<'input'>, 'onChange'> {
   onChange?: (value: string) => void
 }
 
-export default function Search({ onChange, className, ...rest }: SearchProps) {
+export default function SearchInput({
+  onChange,
+  className,
+  ...rest
+}: SearchProps) {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value)
   }
