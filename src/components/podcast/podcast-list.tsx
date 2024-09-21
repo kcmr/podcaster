@@ -19,6 +19,7 @@ export default function PodcastList({ podcasts }: PodcastListProps) {
             <img
               src={imageSrc}
               alt={`${title} cover`}
+              loading="lazy"
               width={120}
               height={120}
               className="rounded-full border-4 border-white shadow-md"
