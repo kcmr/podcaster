@@ -7,6 +7,7 @@ import prettierConfig from 'eslint-config-prettier'
 import prettierPlugin from 'eslint-plugin-prettier'
 import reactPlugin from 'eslint-plugin-react'
 import checkFile from 'eslint-plugin-check-file'
+import importPlugin from 'eslint-plugin-import'
 
 export default tseslint.config(
   { ignores: ['dist', 'coverage'] },
@@ -26,6 +27,7 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'check-file': checkFile,
+      import: importPlugin,
       prettier: prettierPlugin,
     },
     rules: {
@@ -72,6 +74,12 @@ export default tseslint.config(
               message: 'Use @test-support/react instead',
             },
           ],
+        },
+      ],
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal'],
         },
       ],
     },

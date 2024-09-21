@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import type { Podcast } from '@/types'
-import { Card } from '@/components'
 import type { ComponentProps } from 'react'
 import { clsx } from 'clsx'
+import type { Podcast } from '@/types'
+import { Card } from '@/components'
 
 interface PodcastListProps extends ComponentProps<'div'> {
   podcasts: Podcast[]

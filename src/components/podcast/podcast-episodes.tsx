@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
+import { clsx } from 'clsx'
 import type { PodcastEpisode } from '@/types'
 import { formatDuration } from '@/utils/date'
-import { clsx } from 'clsx'
 import { Card } from '@/components'
 
 interface PodcastEpisodesProps {

@@ -1,6 +1,6 @@
 import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom'
-import { Header } from '@/components'
 import { clsx } from 'clsx'
+import { Header } from '@/components'
 
 export default function Root() {
   const navigation = useNavigation()
