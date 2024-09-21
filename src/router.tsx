@@ -3,15 +3,15 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import { Home, loader as homeLoader } from './pages/home'
+import { Home, loader as homeLoader } from '@/pages/home'
 import {
   Podcast,
   PodcastDetail,
   podcastDetailLoader,
   PodcastEpisode,
   podcastEpisodeLoader,
-} from './pages/podcast'
-import { Root, Error } from './pages'
+} from '@/pages/podcast'
+import { Root, Error } from '@/pages/index'
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

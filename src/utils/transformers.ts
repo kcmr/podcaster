@@ -3,7 +3,7 @@ import type {
   ApiPodcastLookup,
   Podcast,
   PodcastDetail,
-} from '../types'
+} from '@/types'
 
 export function transformApiPodcastToPodcast(apiPodcast: ApiPodcast): Podcast {
   return {

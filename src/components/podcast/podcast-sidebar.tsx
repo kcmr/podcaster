@@ -8,7 +8,10 @@ interface PodcastSidebarProps extends ComponentProps<'div'> {
   podcast: Podcast
 }
 
-export function PodcastSidebar({ podcast, className }: PodcastSidebarProps) {
+export default function PodcastSidebar({
+  podcast,
+  className,
+}: PodcastSidebarProps) {
   const { title, author, imageSrc, description, id } = podcast
 
   return (

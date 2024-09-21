@@ -1,5 +1,4 @@
-import { render } from '../../../test-support'
-import { screen } from '@testing-library/react'
+import { render, screen } from '@test-support/react'
 import Header from './header'
 
 describe('Header', () => {

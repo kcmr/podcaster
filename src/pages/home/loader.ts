@@ -1,8 +1,8 @@
-import { fetchTopPodcasts } from '../../services/api'
-import { usePodcastStore } from '../../store'
-import type { Podcast } from '../../types'
-import { transformApiPodcastToPodcast } from '../../utils/transformers'
-import { isOlderThanOneDay } from '../../utils/date'
+import { fetchTopPodcasts } from '@/services/api'
+import { usePodcastStore } from '@/store'
+import type { Podcast } from '@/types'
+import { transformApiPodcastToPodcast } from '@/utils/transformers'
+import { isOlderThanOneDay } from '@/utils/date'
 
 export const loader = async (): Promise<Podcast[]> => {
   const { podcasts, lastFetched, setPodcasts, setLastFetched } =

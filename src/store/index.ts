@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { Podcast, PodcastDetail, PodcastEpisode } from '../types'
-import { isOlderThanOneDay } from '../utils/date'
+import type { Podcast, PodcastDetail, PodcastEpisode } from '@/types'
+import { isOlderThanOneDay } from '@/utils/date'
 
 interface PodcastStore {
   podcasts: Podcast[]

@@ -1,6 +1,6 @@
 import { Outlet, useLoaderData } from 'react-router-dom'
-import { PodcastSidebar } from '../../components/podcast/podcast-sidebar'
-import type { PodcastDetail } from '../../types'
+import { default as PodcastSidebar } from '@/components/podcast/podcast-sidebar'
+import type { PodcastDetail } from '@/types'
 
 export default function Podcast() {
   const podcastDetail = useLoaderData() as PodcastDetail

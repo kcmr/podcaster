@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs } from 'react-router-dom'
-import { usePodcastDetailStore } from '../../../store'
-import type { PodcastEpisode } from '../../../types'
+import { usePodcastDetailStore } from '@/store'
+import type { PodcastEpisode } from '@/types'
 
 export const loader = ({
   params,

@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom'
-import Card from '../../../components/common/card'
-import type { PodcastEpisode } from '../../../types'
+import Card from '@/components/common/card'
+import type { PodcastEpisode } from '@/types'
 
 export default function PodcastEpisode() {
   const episode = useLoaderData() as PodcastEpisode | null

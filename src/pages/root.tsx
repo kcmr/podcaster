@@ -1,6 +1,6 @@
 import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom'
-import Header from '../components/common/header'
-import { cn } from '../utils/style'
+import Header from '@/components/common/header'
+import { cn } from '@/utils/style'
 
 export default function Root() {
   const navigation = useNavigation()

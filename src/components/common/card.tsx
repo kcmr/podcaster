@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react'
-import { cn } from '../../utils/style'
+import { cn } from '@/utils/style'
 
 interface CardProps extends ComponentProps<'div'> {
   hoverAnimation?: boolean

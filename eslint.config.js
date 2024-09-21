@@ -62,6 +62,18 @@ export default tseslint.config(
           prefer: 'type-imports',
         },
       ],
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: '@testing-library/react',
+              importNames: ['render', 'screen'],
+              message: 'Use @test-support/react instead',
+            },
+          ],
+        },
+      ],
     },
   },
   {

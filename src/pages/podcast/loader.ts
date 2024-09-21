@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs } from 'react-router-dom'
-import { fetchPodcastDetails } from '../../services/api'
-import { usePodcastDetailStore, usePodcastStore } from '../../store'
-import { transformApiPodcastLookupToPodcastEpisodes } from '../../utils/transformers'
+import { fetchPodcastDetails } from '@/services/api'
+import { usePodcastDetailStore, usePodcastStore } from '@/store'
+import { transformApiPodcastLookupToPodcastEpisodes } from '@/utils/transformers'
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { podcastId } = params
