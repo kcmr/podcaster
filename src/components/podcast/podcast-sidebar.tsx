@@ -11,11 +11,12 @@ interface PodcastSidebarProps extends ComponentProps<'div'> {
 export default function PodcastSidebar({
   podcast,
   className,
+  ...rest
 }: PodcastSidebarProps) {
   const { title, author, imageSrc, description, id } = podcast
 
   return (
-    <Card className={cn('flex flex-col gap-4', className)}>
+    <Card className={cn('flex flex-col gap-4', className)} {...rest}>
       <Link
         to={`/podcast/${id}`}
         aria-label={`Go to ${title} podcast page`}
