@@ -19,13 +19,15 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     const apiData = await fetchPodcastDetails(podcastId)
     const episodes = transformApiPodcastLookupToPodcastEpisodes(apiData)
     const detail = podcasts.find(({ id }) => id === podcastId)!
-    setPodcastDetail(podcastId, {
+    const podcastDetail = {
       ...detail,
       ...episodes,
-    })
+    }
+
+    setPodcastDetail(podcastId, podcastDetail)
     setLastFetched(podcastId, Date.now())
 
-    return episodes
+    return podcastDetail
   }
 
   return getPodcastDetail(podcastId)
