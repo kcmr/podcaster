@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# Podcaster App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requirements
 
-Currently, two official plugins are available:
+- Node.js 20 (Check `.npmrc` to see the exact version used for the project)
+- pnpm 9 ([Installation instructions](https://pnpm.io/installation))
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Alternatively, you can run the app in a devcontainer using the Dev Containers extension in VS Code. Check the section about [running in a devcontainer](#in-a-devcontainer) for more information.
 
-## Expanding the ESLint configuration
+## Running the app
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Locally
 
-- Configure the top-level `parserOptions` property like this:
+Install dependencies:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+pnpm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Development mode:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+pnpm dev
 ```
+
+Production mode:
+
+```bash
+pnpm build && pnpm preview
+```
+
+> **Important:** For the Vite proxy server to work, the production build needs to be run with `pnpm preview` instead of any other static file server like `http-server` or similar.
+
+### In a devcontainer
+
+There is a devcontainer configuration that can be used to run the app without the need to install Node.js and pnpm locally.
+
+To use it, you need to have the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code and Docker Desktop running. The project can be opened in a remote container selecting `Remote-Containers: Reopen in Container` from the command palette.
+
+Once the container is running, the app can be started using `pnpm dev` or `pnpm build && pnpm preview` from the container shell.
+
+## Testing
+
+The following commands are available:
+
+- `pnpm test:watch` Runs unit tests in watch mode
+- `pnpm test` Runs unit tests once
+- `pnpm test:coverage` Runs unit tests and generates a coverage report
+
+## Linting and formatting
+
+The following commands are available:
+
+- `pnpm lint` Runs ESLint (`--fix` flag can be added to fix lint errors automatically)
+- `pnpm format` Formats the code with Prettier
