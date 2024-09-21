@@ -1,4 +1,9 @@
-import { ApiPodcast, ApiPodcastLookup, Podcast, PodcastDetail } from '../types'
+import type {
+  ApiPodcast,
+  ApiPodcastLookup,
+  Podcast,
+  PodcastDetail,
+} from '../types'
 
 export function transformApiPodcastToPodcast(apiPodcast: ApiPodcast): Podcast {
   return {

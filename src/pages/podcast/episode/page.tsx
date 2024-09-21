@@ -1,6 +1,6 @@
 import { useParams, useOutletContext } from 'react-router-dom'
 import { usePodcastDetailStore } from '../../../store'
-import { PodcastDetail } from '../../../types'
+import type { PodcastDetail } from '../../../types'
 import Card from '../../../components/common/card'
 
 export default function PodcastEpisode() {

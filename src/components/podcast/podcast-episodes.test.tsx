@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { render } from '../../../test-support'
-import { PodcastEpisode } from '../../types'
+import type { PodcastEpisode } from '../../types'
 import PodcastEpisodes from './podcast-episodes'
 
 const mockEpisode: PodcastEpisode = {

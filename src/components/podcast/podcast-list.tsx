@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Podcast } from '../../types'
+import type { Podcast } from '../../types'
 import Card from '../common/card'
 
 interface PodcastListProps {

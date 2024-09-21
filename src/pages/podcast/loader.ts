@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from 'react-router-dom'
+import type { LoaderFunctionArgs } from 'react-router-dom'
 import { fetchPodcastDetails } from '../../services/api'
 import { usePodcastDetailStore, usePodcastStore } from '../../store'
 import { transformApiPodcastLookupToPodcastEpisodes } from '../../utils/transformers'

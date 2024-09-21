@@ -56,6 +56,12 @@ export default tseslint.config(
           'src/**/': 'KEBAB_CASE',
         },
       ],
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+        },
+      ],
     },
   },
   {

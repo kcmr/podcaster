@@ -1,6 +1,6 @@
 import { fetchTopPodcasts } from '../../services/api'
 import { usePodcastStore } from '../../store'
-import { Podcast } from '../../types'
+import type { Podcast } from '../../types'
 import { transformApiPodcastToPodcast } from '../../utils/transformers'
 import { isOlderThanOneDay } from '../../utils/date'
 

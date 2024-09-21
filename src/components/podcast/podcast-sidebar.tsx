@@ -1,5 +1,5 @@
-import { ComponentProps } from 'react'
-import { Podcast } from '../../types'
+import type { ComponentProps } from 'react'
+import type { Podcast } from '../../types'
 import Card from '../common/card'
 import { cn } from '../../utils/style'
 
