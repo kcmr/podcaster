@@ -68,7 +68,7 @@ export default tseslint.config(
           paths: [
             {
               name: '@testing-library/react',
-              importNames: ['render', 'screen'],
+              importNames: ['render', 'screen', 'fireEvent'],
               message: 'Use @test-support/react instead',
             },
           ],
