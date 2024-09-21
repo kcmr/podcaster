@@ -1,8 +1,8 @@
 import type { ComponentProps } from 'react'
-import type { Podcast } from '../../types'
-import Card from '../common/card'
-import { cn } from '../../utils/style'
+import type { Podcast } from '@/types'
+import { cn } from '@/utils/style'
 import { Link } from 'react-router-dom'
+import { Card } from '@/components'
 
 interface PodcastSidebarProps extends ComponentProps<'div'> {
   podcast: Podcast

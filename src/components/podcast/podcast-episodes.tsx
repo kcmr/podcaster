@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import type { PodcastEpisode } from '../../types'
-import { formatDuration } from '../../utils/date'
-import { cn } from '../../utils/style'
-import Card from '../common/card'
+import type { PodcastEpisode } from '@/types'
+import { formatDuration } from '@/utils/date'
+import { cn } from '@/utils/style'
+import { Card } from '@/components'
 
 interface PodcastEpisodesProps {
   episodes: PodcastEpisode[]

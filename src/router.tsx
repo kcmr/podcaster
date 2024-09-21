@@ -11,7 +11,7 @@ import {
   PodcastEpisode,
   podcastEpisodeLoader,
 } from '@/pages/podcast'
-import { Root, Error } from '@/pages/index'
+import { Root, Error } from '@/pages'
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

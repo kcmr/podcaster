@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router-dom'
-import PodcastList from '@/components/podcast/podcast-list'
+import { PodcastList } from '@/components'
 import type { Podcast } from '@/types'
 
 export default function Home() {
