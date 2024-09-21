@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react'
-import { cn } from '@/utils/style'
+import { clsx } from 'clsx'
 
 interface CardProps extends ComponentProps<'div'> {
   hoverAnimation?: boolean
@@ -14,7 +14,7 @@ export default function Card({
   return (
     <div
       {...rest}
-      className={cn(
+      className={clsx(
         'p-4',
         'bg-white',
         'rounded-lg',

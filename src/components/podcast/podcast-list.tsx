@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import type { Podcast } from '@/types'
 import { Card } from '@/components'
 import type { ComponentProps } from 'react'
-import { cn } from '@/utils/style'
+import { clsx } from 'clsx'
 
 interface PodcastListProps extends ComponentProps<'div'> {
   podcasts: Podcast[]
@@ -16,7 +16,7 @@ export default function PodcastList({
   return (
     <div
       {...rest}
-      className={cn(
+      className={clsx(
         'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-16 gap-x-4',
         className,
       )}

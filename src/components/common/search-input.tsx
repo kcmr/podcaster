@@ -1,4 +1,4 @@
-import { cn } from '@/utils/style'
+import { clsx } from 'clsx'
 import type { ChangeEvent, ComponentProps } from 'react'
 
 interface SearchProps extends Omit<ComponentProps<'input'>, 'onChange'> {
@@ -20,7 +20,7 @@ export default function SearchInput({
       {...rest}
       onChange={handleChange}
       type="search"
-      className={cn(
+      className={clsx(
         'w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500',
         className,
       )}

@@ -1,6 +1,6 @@
 import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom'
 import { Header } from '@/components'
-import { cn } from '@/utils/style'
+import { clsx } from 'clsx'
 
 export default function Root() {
   const navigation = useNavigation()
@@ -10,7 +10,7 @@ export default function Root() {
     <main className="container mx-auto mb-12 px-4 max-w-6xl">
       <Header showLoading={isLoading} />
       <div
-        className={cn({
+        className={clsx({
           'opacity-50 pointer-events-none': isLoading,
         })}
       >

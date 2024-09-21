@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react'
 import type { Podcast } from '@/types'
-import { cn } from '@/utils/style'
+import { clsx } from 'clsx'
 import { Link } from 'react-router-dom'
 import { Card } from '@/components'
 
@@ -16,7 +16,7 @@ export default function PodcastSidebar({
   const { title, author, imageSrc, description, id } = podcast
 
   return (
-    <Card className={cn('flex flex-col gap-4', className)} {...rest}>
+    <Card className={clsx('flex flex-col gap-4', className)} {...rest}>
       <Link
         to={`/podcast/${id}`}
         aria-label={`Go to ${title} podcast page`}

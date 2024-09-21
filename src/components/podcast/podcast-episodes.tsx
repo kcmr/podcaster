@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { PodcastEpisode } from '@/types'
 import { formatDuration } from '@/utils/date'
-import { cn } from '@/utils/style'
+import { clsx } from 'clsx'
 import { Card } from '@/components'
 
 interface PodcastEpisodesProps {
@@ -23,7 +23,7 @@ export default function PodcastEpisodes({ episodes }: PodcastEpisodesProps) {
           {episodes.map(({ id, title, releaseDate, durationMs }, index) => (
             <tr
               key={id}
-              className={cn('border-b', index % 2 === 0 && 'bg-slate-50')}
+              className={clsx('border-b', index % 2 === 0 && 'bg-slate-50')}
             >
               <td className="p-2">
                 <Link to={`episode/${id}`} className="text-primary-700">
