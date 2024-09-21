@@ -9,6 +9,7 @@ import {
   PodcastDetail,
   podcastDetailLoader,
   PodcastEpisode,
+  podcastEpisodeLoader,
 } from './pages/podcast'
 import { Root, Error } from './pages'
 
@@ -22,12 +23,12 @@ export const router = createBrowserRouter(
           element={<Podcast />}
           loader={podcastDetailLoader}
         >
+          <Route index element={<PodcastDetail />} />
           <Route
-            index
-            element={<PodcastDetail />}
-            loader={podcastDetailLoader}
+            path="episode/:episodeId"
+            element={<PodcastEpisode />}
+            loader={podcastEpisodeLoader}
           />
-          <Route path="episode/:episodeId" element={<PodcastEpisode />} />
         </Route>
       </Route>
     </Route>,

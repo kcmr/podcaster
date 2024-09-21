@@ -1,12 +1,9 @@
-import { Outlet, useParams } from 'react-router-dom'
-import { usePodcastDetailStore } from '../../store'
+import { Outlet, useLoaderData } from 'react-router-dom'
 import { PodcastSidebar } from '../../components/podcast/podcast-sidebar'
+import type { PodcastDetail } from '../../types'
 
 export default function Podcast() {
-  const { podcastId } = useParams<{ podcastId: string }>()
-  const podcastDetail = usePodcastDetailStore((state) =>
-    state.getPodcastDetail(podcastId!),
-  )
+  const podcastDetail = useLoaderData() as PodcastDetail
 
   return (
     <div className="flex gap-8">
