@@ -15,7 +15,7 @@ export default function Podcast() {
         podcast={podcastDetail}
       />
       <div className="flex-1 flex flex-col gap-4">
-        <Outlet />
+        <Outlet context={{ podcastDetail }} />
       </div>
     </div>
   )

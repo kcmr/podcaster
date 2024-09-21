@@ -1,13 +1,10 @@
-import { useParams } from 'react-router-dom'
-import { usePodcastDetailStore } from '../../../store'
+import { useOutletContext } from 'react-router-dom'
+import type { PodcastDetail } from '../../../types'
 import PodcastEpisodes from '../../../components/podcast/podcast-episodes'
 import Card from '../../../components/common/card'
 
 export default function PodcastDetail() {
-  const { podcastId } = useParams<{ podcastId: string }>()
-  const podcastDetail = usePodcastDetailStore((state) =>
-    state.getPodcastDetail(podcastId!),
-  )
+  const { podcastDetail } = useOutletContext<{ podcastDetail: PodcastDetail }>()
 
   return (
     <>
