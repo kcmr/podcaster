@@ -27,7 +27,7 @@ describe('SearchInput', () => {
     )
   })
 
-  it('uses a provided placeholder when provided', () => {
+  it('uses the provided placeholder', () => {
     render(<SearchInput placeholder="Search…" />)
 
     expect(screen.getByRole('searchbox')).toHaveAttribute(

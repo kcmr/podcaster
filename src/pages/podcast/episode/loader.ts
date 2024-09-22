@@ -12,9 +12,7 @@ export const loader = ({
 
   const { getPodcastDetail } = usePodcastDetailStore.getState()
   const podcastDetail = getPodcastDetail(podcastId)
-  const episode = podcastDetail.episodes.find(
-    (episode) => episode.id === episodeId,
-  )
+  const episode = podcastDetail.episodes.find(({ id }) => id === episodeId)
 
   if (!episode) {
     return null

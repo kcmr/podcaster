@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Spinner from './spinner'
+import { Spinner } from '@/components'
 
 interface HeaderProps {
   showLoading?: boolean

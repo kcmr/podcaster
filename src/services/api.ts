@@ -1,4 +1,4 @@
-import type { ApiPodcastFeed, ApiPodcastLookup } from '../types'
+import type { ApiPodcastFeed, ApiPodcastLookup } from '@/types'
 
 const TOP_PODCASTS_ENDPOINT = `/api/us/rss/toppodcasts/limit=100/genre=1310/json`
 const PODCAST_DETAIL_ENDPOINT = '/api/lookup?id='
