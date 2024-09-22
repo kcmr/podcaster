@@ -40,33 +40,33 @@ pnpm dev
 Production mode:
 
 ```bash
-pnpm build && pnpm preview
+pnpm prod
 ```
 
-> **Important:** For the Vite proxy server to work, the production build needs to be run with `pnpm preview` instead of any other static file server like `http-server` or similar.
+> **Important:** For the Vite proxy server to work, the production build needs to be run with `pnpm prod` instead of any other static file server like `http-server` or similar.
 
 ### In a devcontainer
 
 There is a devcontainer configuration that can be used to run the app without the need to install Node.js and pnpm locally.
 
-To use it, you need to have the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code and Docker Desktop running. The project can be opened in a remote container selecting `Remote-Containers: Reopen in Container` from the command palette.
+To use it, you need to have the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code and Docker Desktop running. The project can be opened in a remote container selecting `Dev Containers: Reopen in Container` from the command palette.
 
-Once the container is running, the app can be started using `pnpm dev` or `pnpm build && pnpm preview` from the container shell.
+Once the container is running, the app can be started using `pnpm dev` or `pnpm prod` from the container shell.
 
 ## Testing
 
 The following commands are available:
 
-- `pnpm test:watch` Runs unit tests in watch mode
-- `pnpm test` Runs unit tests once
-- `pnpm test:coverage` Runs unit tests and generates a coverage report
+- `pnpm test:watch`: Runs unit tests in watch mode.
+- `pnpm test`: Runs unit tests once.
+- `pnpm test:coverage`: Runs unit tests and generates a coverage report.
 
 ## Linting and formatting
 
 The following commands are available:
 
-- `pnpm lint` Runs ESLint (`--fix` flag can be added to fix lint errors automatically)
-- `pnpm format` Formats the code with Prettier
+- `pnpm lint`: Runs ESLint (`--fix` flag can be added to fix lint errors automatically).
+- `pnpm format`: Formats the code with Prettier.
 
 ## Architecture
 
@@ -97,7 +97,7 @@ Folders and files are organized as follows:
     - `podcast/`: Podcast-related components (more tightly coupled to the domain).
   - `pages/`: Page components used by the router (views).
   - `store/`: Contains global state management logic.
-  - `services/`:Contains services that communicate with the API using native browser APIs (`fetch`).
+  - `services/`: Contains services that communicate with the API using native browser APIs (`fetch`).
   - `types/`: Type definitions for the API and the app (e.g., podcasts, episodes).
   - `utils/`: Utility functions and helpers.
   - `router.tsx`: Configures the app’s routes, along with the loader and page components used to render each route.
