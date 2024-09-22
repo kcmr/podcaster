@@ -1,13 +1,11 @@
 /* eslint-disable no-restricted-imports */
 import { render, screen, fireEvent, within } from '@testing-library/react'
 import type { ReactNode } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 
 function renderWithRouter(ui: ReactNode, { route = '/' } = {}) {
-  window.history.pushState({}, '', route)
-
   return {
-    ...render(ui, { wrapper: BrowserRouter }),
+    ...render(<MemoryRouter initialEntries={[route]}>{ui}</MemoryRouter>),
   }
 }
 
