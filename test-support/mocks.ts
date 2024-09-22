@@ -1,6 +1,6 @@
 import { merge } from 'ts-deepmerge'
 import type { DeepPartial } from 'ts-essentials'
-import type { Podcast, PodcastDetail } from '@/types'
+import type { Podcast, PodcastDetail, PodcastEpisode } from '@/types'
 
 type Object = Parameters<typeof merge>[0]
 type MergeOptions = Parameters<typeof merge.withOptions>[0]
@@ -38,6 +38,15 @@ export function getMockPodcasts(
       title: `#${index + 1} Podcast`,
     }),
   }))
+}
+
+export const defaultPodcastEpisodeMock: PodcastEpisode = {
+  id: '1',
+  title: 'Episode 1',
+  description: 'Whatever',
+  durationMs: 60_000,
+  releaseDate: '2021-02-05',
+  audioUrl: 'https://example.com/episode1.mp3',
 }
 
 const defaultPodcastDetailMock: PodcastDetail = {
