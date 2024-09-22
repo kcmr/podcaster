@@ -53,3 +53,62 @@ The following commands are available:
 
 - `pnpm lint` Runs ESLint (`--fix` flag can be added to fix lint errors automatically)
 - `pnpm format` Formats the code with Prettier
+
+## Architecture
+
+The app is a Single Page Application (SPA) built with React. It uses the React Router library for navigation and Vite as a build tool and development server.
+
+### Other technologies used
+
+- [Zustand](https://github.com/pmndrs/zustand): For the store and global state management.
+- [Tailwind CSS](https://tailwindcss.com/): For the styling.
+- [PostCSS](https://postcss.org/): As the CSS processor (used for Tailwind CSS).
+- [clsx](https://github.com/lukeed/clsx): For conditional class names.
+- [Vitest](https://vitest.dev/): As the testing framework.
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/): For testing React components.
+- [lint-staged](https://github.com/okonet/lint-staged): For running linters on staged git files.
+- [Prettier](https://prettier.io/): For code formatting.
+- [ESLint](https://eslint.org/): For linting.
+- [pnpm](https://pnpm.io/): As the package manager.
+
+### Project structure
+
+Folders and files are organized as follows:
+
+- `src/`
+  - `components/`
+    - `common/`: Contains components that can be used across the app.
+    - `podcast/`: Podcast-related components (more tightly coupled to the domain).
+  - `pages/`: Page components used by the router (views).
+  - `store/`: Contains global state management logic.
+  - `services/`:Contains services that communicate with the API using native browser APIs (`fetch`).
+  - `types/`: Type definitions for the API and the app (e.g., podcasts, episodes).
+  - `utils/`: Utility functions and helpers.
+  - `router.tsx`: Configures the app’s routes, along with the loader and page components used to render each route.
+  - `app.tsx`: The entry point of the app, which mounts the providers (only the router in this case).
+  - `main.tsx`: The top-level component that mounts the app into the DOM.
+- `public/`: Static assets (e.g., images).
+- `test-support/`: Configuration files and utilities for testing.
+
+### Data retrieval and responsibilities
+
+#### iTunes API and proxy server (CORS workaround)
+
+Data is retrieved from the iTunes Search API and RSS feeds.
+
+To prevent CORS policy blocks by the browser, a Vite proxy server is used to forward client requests from `/api` to `https://itunes.apple.com`. This requires the production build to be run with Vite's server using `pnpm preview`.
+
+#### Responsibilities
+
+The logic for data retrieval and caching is handled by the page loaders. Each page or route has its own loader, responsible for fetching data if it is not cached or has expired, storing it in the store, and returning it to the component.
+
+The router is responsible for rendering the page components and passing the loaders to them.
+
+The store uses Zustand to manage the app’s global state. It is responsible for storing data in `localStorage` and providing actions to modify it. These actions can be used outside of React components to update the state, enabling their use by the page loaders.
+
+### Conventions
+
+- **File and folder naming**: Files and folders are named in lowercase, with dashes separating words (e.g., `loader.ts`, `top-podcasts-page.tsx`). This prevents issues with case sensitivity across different operating systems and ensures consistency. An ESLint rule enforces this convention.
+- **Test files**: Test files are named the same as the file being tested, but with a `.test` suffix (e.g., `date.test.ts`, `card.test.tsx`).
+- **Imports**: Import paths (e.g., `@/components`, `@/utils`) are relative to the `src` folder. This shortens import paths and prevents the need for updates when the project structure changes.
+- **File extensions**: Files that use JSX have a `.tsx` extension. The `.ts` extension is used for all other TypeScript files, except for certain configuration files that use `.js`.
