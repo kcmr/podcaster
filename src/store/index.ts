@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { Podcast, PodcastDetail, PodcastEpisode } from '@/types'
-import { isOlderThanOneDay } from '@/utils/date'
 
 interface PodcastStore {
   podcasts: Podcast[]
@@ -34,7 +33,6 @@ interface PodcastDetailStore {
   ) => PodcastEpisode | undefined
   lastFetched: Record<string, number>
   setLastFetched: (id: string, timestamp: number) => void
-  shouldFetchPodcastDetail: (id: string) => boolean
 }
 
 export const usePodcastDetailStore = create(
@@ -63,8 +61,6 @@ export const usePodcastDetailStore = create(
             [id]: timestamp,
           },
         })),
-      shouldFetchPodcastDetail: (id) =>
-        isOlderThanOneDay(get().lastFetched[id] ?? 0),
     }),
     {
       name: 'podcast-detail-storage',
