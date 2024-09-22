@@ -51,7 +51,7 @@ There is a devcontainer configuration that can be used to run the app without th
 
 To use it, you need to have the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code and Docker Desktop running. The project can be opened in a remote container selecting `Dev Containers: Reopen in Container` from the command palette.
 
-Once the container is running, the app can be started using `pnpm dev` or `pnpm prod` from the container shell.
+Once the container is running, the app can be started using `pnpm dev --host` or `pnpm prod --host` from the container shell.
 
 ## Testing
 
