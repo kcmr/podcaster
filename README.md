@@ -1,5 +1,19 @@
 # Podcaster App
 
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Running the app](#running-the-app)
+  - [Locally](#locally)
+  - [In a devcontainer](#in-a-devcontainer)
+- [Testing](#testing)
+- [Linting and formatting](#linting-and-formatting)
+- [Architecture](#architecture)
+  - [Technologies used](#Technologies-used)
+  - [Project structure](#project-structure)
+  - [Data retrieval and responsibilities](#data-retrieval-and-responsibilities)
+  - [Conventions](#conventions)
+
 ## Requirements
 
 - Node.js 20 (Check `.npmrc` to see the exact version used for the project)
@@ -58,8 +72,9 @@ The following commands are available:
 
 The app is a Single Page Application (SPA) built with React. It uses the React Router library for navigation and Vite as a build tool and development server.
 
-### Other technologies used
+### Technologies used
 
+- [React Router](https://reactrouter.com/): For the router.
 - [Zustand](https://github.com/pmndrs/zustand): For the store and global state management.
 - [Tailwind CSS](https://tailwindcss.com/): For the styling.
 - [PostCSS](https://postcss.org/): As the CSS processor (used for Tailwind CSS).
@@ -70,6 +85,7 @@ The app is a Single Page Application (SPA) built with React. It uses the React R
 - [Prettier](https://prettier.io/): For code formatting.
 - [ESLint](https://eslint.org/): For linting.
 - [pnpm](https://pnpm.io/): As the package manager.
+- [Vite](https://vitejs.dev/): As the build tool and development server.
 
 ### Project structure
 
@@ -108,7 +124,7 @@ The store uses Zustand to manage the app’s global state. It is responsible for
 
 ### Conventions
 
-- **File and folder naming**: Files and folders are named in lowercase, with dashes separating words (e.g., `loader.ts`, `top-podcasts-page.tsx`). This prevents issues with case sensitivity across different operating systems and ensures consistency. An ESLint rule enforces this convention.
+- **File and folder naming**: Files and folders are named in lowercase, with dashes separating words (e.g., `search-input.tsx`). This prevents issues with case sensitivity across different operating systems and ensures consistency. An ESLint rule enforces this convention.
 - **Test files**: Test files are named the same as the file being tested, but with a `.test` suffix (e.g., `date.test.ts`, `card.test.tsx`).
 - **Imports**: Import paths (e.g., `@/components`, `@/utils`) are relative to the `src` folder. This shortens import paths and prevents the need for updates when the project structure changes.
 - **File extensions**: Files that use JSX have a `.tsx` extension. The `.ts` extension is used for all other TypeScript files, except for certain configuration files that use `.js`.
