@@ -1,14 +1,6 @@
 import { merge } from 'ts-deepmerge'
 import type { DeepPartial } from 'ts-essentials'
-import type { Podcast } from '@/types'
-
-export const defaultPodcastMock: Podcast = {
-  id: '1',
-  title: 'Podcast',
-  author: 'Author',
-  description: 'Description',
-  imageSrc: 'https://example.com/podcast.jpg',
-}
+import type { Podcast, PodcastDetail } from '@/types'
 
 type Object = Parameters<typeof merge>[0]
 type MergeOptions = Parameters<typeof merge.withOptions>[0]
@@ -25,6 +17,14 @@ export const getCustomMock =
     return merge(fixtureTarget, safeOverrides) as Fixture
   }
 
+const defaultPodcastMock: Podcast = {
+  id: '1',
+  title: 'Podcast',
+  author: 'Author',
+  description: 'Description',
+  imageSrc: 'https://example.com/podcast.jpg',
+}
+
 export const getMockPodcast = getCustomMock<Podcast>(defaultPodcastMock)
 
 export function getMockPodcasts(
@@ -39,3 +39,12 @@ export function getMockPodcasts(
     }),
   }))
 }
+
+const defaultPodcastDetailMock: PodcastDetail = {
+  ...defaultPodcastMock,
+  episodes: [],
+}
+
+export const getMockPodcastDetail = getCustomMock<PodcastDetail>(
+  defaultPodcastDetailMock,
+)
