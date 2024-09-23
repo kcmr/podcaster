@@ -18,7 +18,7 @@ export default function Header({ showLoading }: HeaderProps) {
         <Spinner
           hidden={!showLoading}
           aria-label="Loading…"
-          className="fixed top-4 right-4"
+          className="fixed top-4 right-4 z-10"
         />
       </div>
     </header>

@@ -14,9 +14,11 @@ export default function PodcastEpisodes({ episodes }: PodcastEpisodesProps) {
       <table className="w-full border-collapse">
         <thead>
           <tr>
-            <th className="text-left p-2 border-b">Title</th>
-            <th className="text-left p-2 border-b">Date</th>
-            <th className="text-right p-2 border-b">Duration</th>
+            <th className="text-left p-2 border-b w-full">Title</th>
+            <th className="text-left p-2 border-b whitespace-nowrap">Date</th>
+            <th className="text-right p-2 border-b whitespace-nowrap">
+              Duration
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -30,10 +32,10 @@ export default function PodcastEpisodes({ episodes }: PodcastEpisodesProps) {
                   {title}
                 </Link>
               </td>
-              <td className="p-2">
+              <td className="p-2 align-top">
                 {new Date(releaseDate).toLocaleDateString()}
               </td>
-              <td className="p-2 text-right">
+              <td className="p-2 align-top text-right">
                 {!durationMs ? 'N/A' : formatDuration(durationMs)}
               </td>
             </tr>
